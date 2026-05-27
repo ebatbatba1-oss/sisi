@@ -1,0 +1,204 @@
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+#wheel-title {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#wheel-title:focus {
+    border-color: #3b82f6;
+}
+
+.wheel-section {
+    position: relative;
+    margin: 0 auto 30px auto;
+    width: 400px;
+    height: 400px;
+}
+
+canvas {
+    border-radius: 50%;
+    border: 8px solid #1e293b;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* 5초 동안 점점 느려지며 멈추는 애니메이션 */
+    transition: transform 5s cubic-bezier(0.17, 0.67, 0.1, 1);
+    background-color: #f8fafc;
+}
+
+.pointer {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 45px solid #ef4444;
+    z-index: 10;
+    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.2));
+}
+
+#spin-btn {
+    margin-top: 30px;
+    padding: 15px 50px;
+    font-size: 20px;
+    font-weight: 800;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+#spin-btn:hover {
+    background-color: #2563eb;
+    transform: translateY(-2px);
+}
+
+#spin-btn:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.settings-section {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.settings-section h3, .history-section h3 {
+    margin-top: 0;
+    color: #1e293b;
+}
+
+.description {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.item-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.item-row input[type="text"] {
+    flex: 3;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+.item-row input[type="number"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+.remove-btn {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add-item-btn {
+    background-color: #10b981;
+    color: white;
+}
+
+#update-wheel-btn {
+    background-color: #475569;
+    color: white;
+}
+
+.history-section {
+    text-align: left;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+#history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#history-list li {
+    background: #ffffff;
+    margin-bottom: 8px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border-left: 5px solid #3b82f6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    font-weight: 600;
+    color: #334155;
+    display: flex;
+    justify-content: space-between;
+}
+
+.empty-msg {
+    color: #94a3b8 !important;
+    font-weight: normal !important;
+    border-left: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-align: center;
+}

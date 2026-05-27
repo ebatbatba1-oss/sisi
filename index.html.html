@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커스텀 돌림판</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="wheel-title" placeholder="무슨 돌림판인지 적어주세요 (예: 오늘 점심 메뉴!)" />
+
+        <div class="wheel-section">
+            <canvas id="wheel" width="400" height="400"></canvas>
+            <div class="pointer"></div>
+            <button id="spin-btn">돌리기!</button>
+        </div>
+
+        <div class="settings-section">
+            <h3>항목 및 확률 설정</h3>
+            <p class="description">확률(비율) 숫자를 높이면 해당 칸이 넓어집니다.</p>
+            <div id="items-container">
+                </div>
+            <div class="button-group">
+                <button id="add-item-btn">+ 칸 추가하기</button>
+                <button id="update-wheel-btn">돌림판에 적용하기</button>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <h3>이전 결과</h3>
+            <ul id="history-list">
+                <li class="empty-msg">아직 돌림판을 돌리지 않았습니다.</li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
